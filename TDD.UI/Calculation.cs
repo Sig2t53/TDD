@@ -12,5 +12,10 @@ namespace TDD.UI
         {
             return a + b;
         }
+
+        public static int Ave(List<int> list)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
