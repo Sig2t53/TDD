@@ -9,6 +9,8 @@ namespace TDDTest.Tests
         [TestMethod]
         public void TestMethod1()
         {
+            var val = TDD.UI.Calculation.Sum(2, 5);
+            Assert.AreEqual(7,val);
         }
     }
 }
