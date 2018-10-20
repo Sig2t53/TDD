@@ -11,10 +11,41 @@ namespace TDD.UI
     {
         //private System.Windows.Forms.Button CalculationButton;
 
-        public string ATextBoxText { get; set; } = string.Empty;
-        public string BTextBoxText { get; set; } = string.Empty;
-        public string ResultLabelText { get; set; } = string.Empty;
+        private string _aTextBoxText = string.Empty;
+        public string ATextBoxText
+        {
+            get { return _aTextBoxText; }
+            set
+            {
+                if (_aTextBoxText == value) return;
+                _aTextBoxText = value;
+                OnPropertyChanged("ATextBoxText");
+            }
+        }
 
+        private string _bTextBoxText = string.Empty;
+        public string BTextBoxText
+        {
+            get { return _bTextBoxText; }
+            set
+            {
+                if (_bTextBoxText == value) return;
+                _bTextBoxText = value;
+                OnPropertyChanged("BTextBoxText");
+            }
+        }
+
+        private string _resultLabelText = string.Empty;
+        public string ResultLabelText
+        {
+            get { return _resultLabelText; }
+            set
+            {
+                if (_resultLabelText == value) return;
+                _resultLabelText = value;
+                OnPropertyChanged("ResultLabelText");
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void OnPropertyChanged(string propertyName)
