@@ -16,5 +16,12 @@ namespace TDD.UI
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int a = Convert.ToInt16(ATextBox.Text);
+            int b = Convert.ToInt16(BTextBox.Text);
+            ResultLabel.Text = Calculation.Sum(a, b).ToString();
+        }
     }
 }
