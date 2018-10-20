@@ -1,6 +1,6 @@
 ﻿namespace TDD.UI
 {
-    partial class Form1
+    partial class Form1View
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ResultLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.CalculationButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ATextBox
@@ -77,22 +77,22 @@
             this.ResultLabel.TabIndex = 2;
             this.ResultLabel.Text = "XXX";
             // 
-            // button1
+            // CalculationButton
             // 
-            this.button1.Location = new System.Drawing.Point(41, 104);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 51);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "計算";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.CalculationButton.Location = new System.Drawing.Point(41, 104);
+            this.CalculationButton.Name = "CalculationButton";
+            this.CalculationButton.Size = new System.Drawing.Size(165, 51);
+            this.CalculationButton.TabIndex = 3;
+            this.CalculationButton.Text = "計算";
+            this.CalculationButton.UseVisualStyleBackColor = true;
+            this.CalculationButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 189);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CalculationButton);
             this.Controls.Add(this.ResultLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -112,7 +112,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label ResultLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CalculationButton;
     }
 }
 
