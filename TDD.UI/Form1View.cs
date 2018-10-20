@@ -16,16 +16,15 @@ namespace TDD.UI
         public Form1View()
         {
             InitializeComponent();
+            ATextBox.DataBindings.Add("Text", _viewModel, "ATextBoxText");
+            BTextBox.DataBindings.Add("Text", _viewModel, "BTextBoxText");
+            ResultLabel.DataBindings.Add("Text", _viewModel, "ResultLabelText");
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _viewModel.ATextBoxText = ATextBox.Text;
-            _viewModel.BTextBoxText = BTextBox.Text;
-
             _viewModel.CalculationAction();
-
-            ResultLabel.Text = _viewModel.ResultLabelText;
         }
     }
 }
