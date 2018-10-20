@@ -14,5 +14,11 @@ namespace TDD.UI
         public string BTextBoxText { get; set; } = string.Empty;
         public string ResultLabelText { get; set; } = string.Empty;
 
+        public void CalculationAction()
+        {
+            int a = Convert.ToInt16(ATextBoxText);
+            int b = Convert.ToInt16(BTextBoxText);
+            ResultLabelText = Calculation.Sum(a, b).ToString();
+        }
     }
 }
