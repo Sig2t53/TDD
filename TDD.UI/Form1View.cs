@@ -12,6 +12,7 @@ namespace TDD.UI
 {
     public partial class Form1View : Form
     {
+        private Form1ViewModel _viewModel = new Form1ViewModel();
         public Form1View()
         {
             InitializeComponent();
@@ -19,9 +20,12 @@ namespace TDD.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int a = Convert.ToInt16(ATextBox.Text);
-            int b = Convert.ToInt16(BTextBox.Text);
-            ResultLabel.Text = Calculation.Sum(a, b).ToString();
+            _viewModel.ATextBoxText = ATextBox.Text;
+            _viewModel.BTextBoxText = BTextBox.Text;
+
+            _viewModel.CalculationAction();
+
+            ResultLabel.Text = _viewModel.ResultLabelText;
         }
     }
 }
