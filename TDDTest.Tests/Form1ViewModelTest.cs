@@ -10,7 +10,7 @@ namespace TDDTest.Tests
         [TestMethod]
         public void シナリオ()
         {
-            var viewModel = new Form1ViewModel();
+            var viewModel = new Form1ViewModel(new DBMock());
             Assert.AreEqual("", viewModel.ATextBoxText);
             Assert.AreEqual("", viewModel.BTextBoxText);
             Assert.AreEqual("", viewModel.ResultLabelText);
@@ -19,6 +19,14 @@ namespace TDDTest.Tests
             viewModel.BTextBoxText = "5";
             viewModel.CalculationAction();
             Assert.AreEqual("107",viewModel.ResultLabelText);
+        }
+
+    }
+    internal class DBMock : IDB
+    {
+        public int getDBValue()
+        {
+            return 100;
         }
     }
 }

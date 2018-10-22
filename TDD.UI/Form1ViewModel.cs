@@ -9,6 +9,12 @@ namespace TDD.UI
 {
     public class Form1ViewModel :ViewModelBase
     {
+        private IDB _db;
+
+        public Form1ViewModel(IDB db)
+        {
+            _db = db;
+        }
 
         private string _aTextBoxText = string.Empty;
         public string ATextBoxText
@@ -36,7 +42,7 @@ namespace TDD.UI
             int a = Convert.ToInt16(ATextBoxText);
             int b = Convert.ToInt16(BTextBoxText);
 
-            int dbValue = DB.getDBValue();
+            int dbValue = _db.getDBValue();
             ResultLabelText = (Calculation.Sum(a, b) + dbValue).ToString();
         }
     }
