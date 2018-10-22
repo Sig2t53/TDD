@@ -7,53 +7,28 @@ using System.Threading.Tasks;
 
 namespace TDD.UI
 {
-    public class Form1ViewModel :INotifyPropertyChanged
+    public class Form1ViewModel :ViewModelBase
     {
-        //private System.Windows.Forms.Button CalculationButton;
 
         private string _aTextBoxText = string.Empty;
         public string ATextBoxText
         {
             get { return _aTextBoxText; }
-            set
-            {
-                if (_aTextBoxText == value) return;
-                _aTextBoxText = value;
-                OnPropertyChanged("ATextBoxText");
-            }
+            set { SetProperty(ref _aTextBoxText, value); }
         }
 
         private string _bTextBoxText = string.Empty;
         public string BTextBoxText
         {
             get { return _bTextBoxText; }
-            set
-            {
-                if (_bTextBoxText == value) return;
-                _bTextBoxText = value;
-                OnPropertyChanged("BTextBoxText");
-            }
+            set { SetProperty(ref _bTextBoxText, value); }
         }
 
         private string _resultLabelText = string.Empty;
         public string ResultLabelText
         {
             get { return _resultLabelText; }
-            set
-            {
-                if (_resultLabelText == value) return;
-                _resultLabelText = value;
-                OnPropertyChanged("ResultLabelText");
-            }
-        }
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this,new PropertyChangedEventArgs(propertyName));
-            }
+            set { SetProperty(ref _resultLabelText, value); }
         }
 
         public void CalculationAction()
@@ -62,8 +37,6 @@ namespace TDD.UI
             int b = Convert.ToInt16(BTextBoxText);
 
             ResultLabelText = Calculation.Sum(a, b).ToString();
-
-            OnPropertyChanged(string.Empty);
         }
     }
 }
