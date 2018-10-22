@@ -36,7 +36,8 @@ namespace TDD.UI
             int a = Convert.ToInt16(ATextBoxText);
             int b = Convert.ToInt16(BTextBoxText);
 
-            ResultLabelText = Calculation.Sum(a, b).ToString();
+            int dbValue = DB.getDBValue();
+            ResultLabelText = (Calculation.Sum(a, b) + dbValue).ToString();
         }
     }
 }
