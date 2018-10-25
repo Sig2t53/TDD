@@ -22,12 +22,13 @@ namespace TDDTest.Tests
             viewModel.BTextBoxText = "5";
             viewModel.CalculationAction();
             Assert.AreEqual("107",viewModel.ResultLabelText);
+            viewModel.ResultLabelText.Is("107");
 
             viewModel.ATextBoxText = "-1";
             viewModel.BTextBoxText = "3";
             var ex = AssertEx.Throws<InputException>(() => viewModel.CalculationAction());
-            Assert.AreEqual("マイナス値は入力できません", ex.Message);
-
+            Assert.AreEqual("マイナス値は入力できません", ex.Message);            
+            ex.Message.Is("マイナス値は入力できません");
         }
 
         [TestMethod]
