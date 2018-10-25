@@ -22,6 +22,11 @@ namespace TDDTest.Tests
             viewModel.BTextBoxText = "5";
             viewModel.CalculationAction();
             Assert.AreEqual("107",viewModel.ResultLabelText);
+
+            viewModel.ATextBoxText = "-1";
+            viewModel.BTextBoxText = "3";
+            AssertEx.Throws<InputException>(() => viewModel.CalculationAction());
+
         }
 
         [TestMethod]
