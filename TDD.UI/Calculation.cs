@@ -10,6 +10,11 @@ namespace TDD.UI
     {
         public static int Sum(int a,int b)
         {
+            if (a < 0 || b < 0)
+            {
+                throw new InputException("マイナス値は入力できません");
+            }
+
             return a + b;
         }
 

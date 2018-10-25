@@ -12,6 +12,7 @@ namespace TDDTest.Tests
         public void シナリオ()
         {
             var mock = new Mock<IDB>();
+            mock.Setup(x => x.getDBValue()).Returns(100);
             var viewModel = new Form1ViewModel(mock.Object);
             Assert.AreEqual("", viewModel.ATextBoxText);
             Assert.AreEqual("", viewModel.BTextBoxText);
@@ -22,6 +23,14 @@ namespace TDDTest.Tests
             viewModel.CalculationAction();
             Assert.AreEqual("107",viewModel.ResultLabelText);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InputException))]
+        public void 例外()
+        {
+            Assert.AreEqual(1, Calculation.Sum(-1, 2));
+        }
+
 
     }
 
