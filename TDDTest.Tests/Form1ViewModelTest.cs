@@ -25,7 +25,8 @@ namespace TDDTest.Tests
 
             viewModel.ATextBoxText = "-1";
             viewModel.BTextBoxText = "3";
-            AssertEx.Throws<InputException>(() => viewModel.CalculationAction());
+            var ex = AssertEx.Throws<InputException>(() => viewModel.CalculationAction());
+            Assert.AreEqual("マイナス値は入力できません", ex.Message);
 
         }
 
